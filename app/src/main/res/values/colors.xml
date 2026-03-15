@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Warm Color Palette (Light Mode) -->
+    <color name="primary">#8B4100</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#FFDBC9</color>
+    <color name="onPrimaryContainer">#2D1200</color>
+
+    <color name="secondary">#755846</color>
+    <color name="onSecondary">#FFFFFF</color>
+    <color name="secondaryContainer">#FFDBC9</color>
+    <color name="onSecondaryContainer">#2B1609</color>
+
+    <color name="tertiary">#606134</color>
+    <color name="onTertiary">#FFFFFF</color>
+    <color name="tertiaryContainer">#E6E6AD</color>
+    <color name="onTertiaryContainer">#1C1D00</color>
+
+    <color name="background">#FFFBFF</color>
+    <color name="onBackground">#201A17</color>
+    <color name="surface">#FFFBFF</color>
+    <color name="onSurface">#201A17</color>
+
+    <!-- Warm Color Palette (Dark Mode) -->
+    <color name="primary_dark">#FFB68C</color>
+    <color name="onPrimary_dark">#4A2000</color>
+    <color name="primaryContainer_dark">#6A3000</color>
+    <color name="onPrimaryContainer_dark">#FFDBC9</color>
+
+    <color name="secondary_dark">#E5C0AB</color>
+    <color name="onSecondary_dark">#432B1B</color>
+    <color name="secondaryContainer_dark">#5B4130</color>
+    <color name="onSecondaryContainer_dark">#FFDBC9</color>
+
+    <color name="tertiary_dark">#CACA93</color>
+    <color name="onTertiary_dark">#32320A</color>
+    <color name="tertiaryContainer_dark">#48491E</color>
+    <color name="onTertiaryContainer_dark">#E6E6AD</color>
+
+    <color name="background_dark">#201A17</color>
+    <color name="onBackground_dark">#EDE0DB</color>
+    <color name="surface_dark">#201A17</color>
+    <color name="onSurface_dark">#EDE0DB</color>
+</resources>
