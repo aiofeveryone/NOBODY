@@ -1,30 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@color/background">
 
-    <EditText
-        android:id="@+id/edit_search"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter destination"
-        android:imeOptions="actionSearch"
-        android:inputType="text"
-        android:maxLines="1"
-        android:singleLine="true" />
+        android:background="@color/surface"
+        app:elevation="4dp">
 
-    <Button
-        android:id="@+id/btn_do_search"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search Destination"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Enhanced Search Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@android:drawable/ic_menu_search"
+                        android:contentDescription="@string/search_destination"
+                        app:tint="@color/primary" />
+
+                    <EditText
+                        android:id="@+id/edit_search"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@null"
+                        android:hint="Enter location, address, or place name"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="18sp"
+                        android:textColorHint="@color/secondary" />
+
+                    <ImageButton
+                        android:id="@+id/btn_do_search"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_menu_send"
+                        android:contentDescription="@string/search_destination"
+                        app:tint="@color/primary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Help Text -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Press Enter or tap send to search"
+                android:textSize="12sp"
+                android:textColor="@color/secondary"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Results Container -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Search" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_results"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:clipToPadding="false"
+            tools:listitem="@android:layout/simple_list_item_2" />
 
-</LinearLayout>
+        <!-- Empty State -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/empty_state"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@android:drawable/ic_dialog_map"
+                android:contentDescription="@string/search_destination"
+                android:alpha="0.5"
+                app:tint="@color/secondary"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No results found"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/onSurface"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try a different search term"
+                android:textSize="14sp"
+                android:textColor="@color/secondary" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

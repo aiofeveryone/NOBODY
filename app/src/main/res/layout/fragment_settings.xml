@@ -1,85 +1,385 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@color/background">
 
-    <!-- Language Setting -->
     <LinearLayout
-        android:id="@+id/layout_language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true">
+        android:padding="24dp">
 
-        <TextView
-            android:id="@+id/tv_language_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Language"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_selected_language"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Detect language"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="?android:attr/dividerVertical" />
-
-    <!-- Auto Launch Setting -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        <!-- Header -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/switch_auto_launch"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="32dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="@string/app_name"
+                android:layout_marginBottom="16dp"
+                android:scaleType="centerInside" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="주행시 자동 앱 실행"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Settings"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:textAlignment="center"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="주행 시작 시 선택한 내비 앱을 자동 실행합니다"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textSize="14sp" />
+                android:text="Customize your AUTOBAHN experience"
+                android:textSize="14sp"
+                android:textColor="@color/secondary"
+                android:textAlignment="center"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch_auto_launch"
-            android:layout_width="wrap_content"
+        <!-- Update Card - Prominent -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true" />
-    </RelativeLayout>
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            android:layout_marginBottom="24dp"
+            app:strokeWidth="0dp"
+            android:backgroundTint="@color/primaryContainer">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/dividerVertical" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-</LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        android:contentDescription="@string/app_name"
+                        app:tint="@color/primary" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="App Version"
+                            android:textSize="12sp"
+                            android:textColor="@color/secondary"
+                            android:textAllCaps="true"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_version_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="v1.0.103"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/onSurface"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/surface_variant"
+                    android:layout_marginVertical="12dp" />
+
+                <Button
+                    android:id="@+id/btn_check_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/update_now"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/primary"
+                    app:cornerRadius="16dp" />
+
+                <Button
+                    android:id="@+id/btn_map_diagnostics"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Map 진단 및 API 키 정보"
+                    android:textSize="14sp"
+                    android:backgroundTint="@color/surface_variant"
+                    android:textColor="@color/onSurface" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- General Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preferences"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondary"
+            android:textAllCaps="true"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/surface_variant"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Language Setting -->
+                <LinearLayout
+                    android:id="@+id/layout_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@android:drawable/ic_dialog_info"
+                            app:tint="@color/primary"
+                            android:contentDescription="@string/action_settings" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Language"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/onSurface" />
+
+                            <TextView
+                                android:id="@+id/tv_selected_language"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Detect language"
+                                android:textColor="@color/secondary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/ic_media_play"
+                            app:tint="@color/secondary"
+                            android:rotation="270"
+                            android:contentDescription="@string/action_settings" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@color/surface_variant" />
+
+                <!-- Auto Launch Setting -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/switch_auto_launch"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@android:drawable/ic_media_play"
+                                app:tint="@color/primary"
+                                android:contentDescription="@string/auto_routing" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Auto Launch on Drive"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/onSurface"
+                                android:layout_marginStart="12dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Automatically open navigation"
+                            android:textColor="@color/secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_auto_launch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <!-- Always use external map setting -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/always_use_external_map"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/onSurface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/always_use_external_map_desc"
+                            android:textColor="@color/secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_always_external_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Additional Info -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondary"
+            android:textAllCaps="true"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/surface_variant">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        app:tint="@color/primary"
+                        android:contentDescription="@string/app_name" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AUTOBAHN"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/onSurface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Advanced Car Navigation System"
+                            android:textColor="@color/secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

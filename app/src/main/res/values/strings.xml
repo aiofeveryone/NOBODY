@@ -13,4 +13,19 @@
 
     <string name="search_destination">Search Destination</string>
     <string name="my_location">My Location</string>
+
+    <!-- New strings for improved UI -->
+    <string name="quick_start">Quick Start</string>
+    <string name="start_navigation_now">Start Navigation Now</string>
+    <string name="destination_not_set">No destination set</string>
+    <string name="tap_search_to_start">Tap search to start navigation</string>
+    <string name="updating">Updating...</string>
+    <string name="update_available">Update Available</string>
+    <string name="update_now">Update Now</string>
+    <string name="app_is_up_to_date">App is up to date</string>
+    <string name="new_version_available">New version available in Play Store</string>
+    <string name="offline_mode">Offline Mode</string>
+    <string name="auto_routing">Auto Routing</string>
+    <string name="always_use_external_map">항상 외부 지도 사용</string>
+    <string name="always_use_external_map_desc">앱 내 지도 로드 실패 시 자동으로 외부 지도 앱을 엽니다</string>
 </resources>

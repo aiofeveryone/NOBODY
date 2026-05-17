@@ -22,7 +22,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AUTOBAHN">
+        android:theme="@style/Theme.AUTOBAHN"
+        android:enableOnBackInvokedCallback="true"
+        tools:targetApi="33">
 
         <activity
             android:name=".MainActivity"
@@ -46,7 +48,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD61CsYNVBYdM0j3yfMnCEIYVy481LhhfM" />
+            android:value="${MAPS_API_KEY}" />
 
     </application>
 

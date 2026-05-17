@@ -3,45 +3,56 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Warm Color Palette (Light Mode) -->
-    <color name="primary">#8B4100</color>
+    <!-- Warm Color Palette (Light Mode) - Enhanced -->
+    <color name="primary">#D84315</color>
     <color name="onPrimary">#FFFFFF</color>
-    <color name="primaryContainer">#FFDBC9</color>
-    <color name="onPrimaryContainer">#2D1200</color>
+    <color name="primaryContainer">#FFDCC8</color>
+    <color name="onPrimaryContainer">#3E0905</color>
 
-    <color name="secondary">#755846</color>
+    <color name="secondary">#6B5145</color>
     <color name="onSecondary">#FFFFFF</color>
-    <color name="secondaryContainer">#FFDBC9</color>
-    <color name="onSecondaryContainer">#2B1609</color>
+    <color name="secondaryContainer">#F5DDD0</color>
+    <color name="onSecondaryContainer">#251707</color>
 
-    <color name="tertiary">#606134</color>
+    <color name="tertiary">#806A34</color>
     <color name="onTertiary">#FFFFFF</color>
-    <color name="tertiaryContainer">#E6E6AD</color>
-    <color name="onTertiaryContainer">#1C1D00</color>
+    <color name="tertiaryContainer">#FFECC4</color>
+    <color name="onTertiaryContainer">#281900</color>
 
-    <color name="background">#FFFBFF</color>
-    <color name="onBackground">#201A17</color>
-    <color name="surface">#FFFBFF</color>
-    <color name="onSurface">#201A17</color>
+    <color name="background">#FFFBF9</color>
+    <color name="onBackground">#251A17</color>
+    <color name="surface">#FFFBF9</color>
+    <color name="onSurface">#251A17</color>
+
+    <!-- Additional colors for better UI -->
+    <color name="error">#D32F2F</color>
+    <color name="success">#388E3C</color>
+    <color name="warning">#F57C00</color>
+    <color name="info">#1976D2</color>
+
+    <!-- Overlay and shadow colors -->
+    <color name="surface_variant">#EFEFE0</color>
+    <color name="outline">#9A8A81</color>
+    <color name="disable_color">#BDBDBD</color>
 
     <!-- Warm Color Palette (Dark Mode) -->
-    <color name="primary_dark">#FFB68C</color>
-    <color name="onPrimary_dark">#4A2000</color>
-    <color name="primaryContainer_dark">#6A3000</color>
-    <color name="onPrimaryContainer_dark">#FFDBC9</color>
+    <color name="primary_dark">#FFB4A0</color>
+    <color name="onPrimary_dark">#5E1409</color>
+    <color name="primaryContainer_dark">#7B2D1F</color>
+    <color name="onPrimaryContainer_dark">#FFDCC8</color>
 
     <color name="secondary_dark">#E5C0AB</color>
-    <color name="onSecondary_dark">#432B1B</color>
-    <color name="secondaryContainer_dark">#5B4130</color>
-    <color name="onSecondaryContainer_dark">#FFDBC9</color>
+    <color name="onSecondary_dark">#3E2B21</color>
+    <color name="secondaryContainer_dark">#564036</color>
+    <color name="onSecondaryContainer_dark">#F5DDD0</color>
 
-    <color name="tertiary_dark">#CACA93</color>
-    <color name="onTertiary_dark">#32320A</color>
-    <color name="tertiaryContainer_dark">#48491E</color>
-    <color name="onTertiaryContainer_dark">#E6E6AD</color>
+    <color name="tertiary_dark">#E8C47E</color>
+    <color name="onTertiary_dark">#422D0D</color>
+    <color name="tertiaryContainer_dark">#5F4719</color>
+    <color name="onTertiaryContainer_dark">#FFECC4</color>
 
-    <color name="background_dark">#201A17</color>
-    <color name="onBackground_dark">#EDE0DB</color>
-    <color name="surface_dark">#201A17</color>
-    <color name="onSurface_dark">#EDE0DB</color>
+    <color name="background_dark">#251A17</color>
+    <color name="onBackground_dark">#FFE5DE</color>
+    <color name="surface_dark">#251A17</color>
+    <color name="onSurface_dark">#FFE5DE</color>
 </resources>
